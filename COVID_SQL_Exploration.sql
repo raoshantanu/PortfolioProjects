@@ -1,3 +1,6 @@
+--The objective of this file is to delve into the data provided by Our World In Data (https://ourworldindata.org/covid-deaths), to explore and understand the relations
+--between COVID infections, death rates, and much more.  
+
 
 -- Test Query:
 SELECT * 
