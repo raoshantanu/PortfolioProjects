@@ -1,4 +1,6 @@
 --SQL Data Cleaning Project
+--This is my Data Cleaning Project! I have taken a dataset regarding Nashville Housing, which is quite unorganized and un-standardized. I have changed and adapted the data using
+--SQL queries below to provide clean, accessible data. 
 
 SELECT * 
 FROM PortfolioProject..NashvilleHousing;
@@ -29,7 +31,6 @@ FROM PortfolioProject.dbo.NashvilleHousing
 order by ParcelID;
 
 
-
 SELECT a.ParcelID, a.PropertyAddress, b.ParcelID, b.PropertyAddress, ISNULL(a.PropertyAddress, b.PropertyAddress)
 FROM PortfolioProject.dbo.NashvilleHousing a 
 JOIN PortfolioProject.dbo.NashvilleHousing b 
@@ -56,7 +57,6 @@ SUBSTRING(PropertyAddress, CHARINDEX(',', PropertyAddress) + 1, LEN(PropertyAddr
 FROM PortfolioProject.dbo.NashvilleHousing
 
 
-
 ALTER TABLE PortfolioProject..NashvilleHousing
 Add PropertySplitAddress Nvarchar(255);
 
@@ -68,9 +68,6 @@ Add PropertySplitCity Nvarchar(255);
 
 UPDATE PortfolioProject..NashvilleHousing
 SET PropertySplitCity = SUBSTRING(PropertyAddress, CHARINDEX(',', PropertyAddress) + 1, LEN(PropertyAddress))
-
-Select *
-FROM PortfolioProject..NashvilleHousing;
 
 
 Select OwnerAddress
